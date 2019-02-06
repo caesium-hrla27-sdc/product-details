@@ -1,13 +1,16 @@
 {
-  "name": "",
-  "version": "",
+  "name": "product-details",
+  "version": "1.0.0",
   "description": "",
   "author": "",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon ./server/index.js",
+    "build": "webpack -d --watch"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
@@ -15,11 +18,12 @@
     "mongoose": "^5.4.10"
   },
   "devDependencies": {
-    "morgan": "^1.9.1",
-    "webpack": "^4.29.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
-    "faker": "^4.1.0"
+    "faker": "^4.1.0",
+    "morgan": "^1.9.1",
+    "webpack": "^4.29.2",
+    "webpack-cli": "^3.2.3"
   }
 }
