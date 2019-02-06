@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/sephora');
 
 const productSchema = new mongoose.Schema({
   name: String,
   description: String,
   size: String,
   item_number: String,
-  price: Number,
+  price: String,
   details: String,
   how_to_use: String,
   ingredients: String,
