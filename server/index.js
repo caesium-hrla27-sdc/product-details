@@ -19,7 +19,6 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 
 app.get('/item', (req, res) => {
   Product.findOne().then(item => {
-    console.log(item);
     res.status(200).json(item);
   });
 });
