@@ -9,6 +9,11 @@ const randInt = (low, high) => {
 for (let i = 0; i < 1000; i++) {
   const newProduct = {};
   newProduct.name = faker.commerce.productName();
+  newProduct.breadcrumbs = [];
+  const breadcrumbCount = randInt(2, 4);
+  for (let i = 0; i < breadcrumbCount; i++) {
+    newProduct.breadcrumbs.push(faker.lorem.word());
+  }
   newProduct.description = faker.lorem.lines(1);
   newProduct.size = faker.lorem.lines(1);
   newProduct.item_number = randInt(10000000, 99999999);

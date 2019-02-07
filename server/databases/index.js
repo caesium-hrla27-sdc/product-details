@@ -4,6 +4,7 @@ mongoose.connect('mongodb://localhost/sephora');
 const productSchema = new mongoose.Schema({
   name: String,
   description: String,
+  breadcrumbs: [String],
   size: String,
   item_number: String,
   price: String,
