@@ -22,7 +22,7 @@ class App extends React.Component {
       return (
         <div id={styles.app}>
           <Breadcrumbs breadcrumbs={this.state.item.breadcrumbs} />
-          <ProductDetails />
+          <ProductDetails item={this.state.item} />
         </div>
       );
     } else {
