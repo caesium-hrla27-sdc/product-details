@@ -28,7 +28,7 @@ for (let i = 0; i < 1000; i++) {
   newProduct.review_count = randInt(0, 5000);
   newProduct.loves_count = randInt(0, 50000);
   newProduct.image_urls = [];
-  const imageCount = randInt(0, 5);
+  const imageCount = randInt(1, 5);
   for (let i = 0; i < imageCount; i++) {
     newProduct.image_urls.push(faker.image.imageUrl());
   }
