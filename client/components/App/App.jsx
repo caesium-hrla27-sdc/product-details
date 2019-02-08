@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
-import Breadcrumbs from './Breadcrumbs';
-import ProductDetails from './ProductDetails';
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
+import ProductDetails from '../ProductDetails/ProductDetails';
+
+import styles from './style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,9 +20,9 @@ class App extends React.Component {
   render() {
     if (Object.keys(this.state.item).length !== 0) {
       return (
-        <div>
+        <div id={styles.app}>
           <Breadcrumbs breadcrumbs={this.state.item.breadcrumbs} />
-          <ProductDetails />
+          <ProductDetails item={this.state.item} />
         </div>
       );
     } else {

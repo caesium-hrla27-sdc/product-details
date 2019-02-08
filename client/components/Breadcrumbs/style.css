@@ -1,0 +1,25 @@
+#breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px;
+}
+
+.crumb {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.crumb a {
+  cursor: pointer;
+}
+
+.arrow {
+  height: 1em;
+  width: 0.5em;
+  font-size: 0.5em;
+  margin: 0px 8px;
+}
