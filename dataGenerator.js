@@ -1,5 +1,5 @@
 const faker = require('faker');
-const { Product } = require('./server/databases/index');
+const { Product, mongoose } = require('./server/databases/index');
 
 faker.seed(42);
 
@@ -27,15 +27,14 @@ for (let i = 0; i < 1000; i++) {
   newProduct.average_rating = Math.random() * 5;
   newProduct.review_count = randInt(0, 5000);
   newProduct.loves_count = randInt(0, 50000);
-  newProduct.image_urls = [];
+  newProduct.media_urls = [];
   const imageCount = randInt(1, 5);
   for (let i = 0; i < imageCount; i++) {
-    newProduct.image_urls.push(faker.image.imageUrl());
+    newProduct.media_urls.push(faker.image.imageUrl());
   }
-  newProduct.video_urls = [];
   const videoCount = randInt(0, 1);
   for (let i = 0; i < videoCount; i++) {
-    newProduct.video_urls.push(
+    newProduct.media_urls.push(
       'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
     );
   }
