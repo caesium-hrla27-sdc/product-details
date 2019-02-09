@@ -1,14 +1,18 @@
-#imageViewerContainer {
-  flex-basis: auto;
+#popupContainer {
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.25);
   display: block;
-  position: relative;
-  min-width: 0;
-  width: 300px;
+  position: absolute;
+  top: -16px;
+  left: 100%;
+  overflow: hidden;
+  z-index: 1050;
+  background-color: #fff;
+  margin-left: 32px;
 }
 
-#imageViewer {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 300px;
+#popup {
+  max-width: 500px;
+  max-height: 500px;
+  width: auto;
+  height: auto;
 }

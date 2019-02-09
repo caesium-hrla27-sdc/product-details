@@ -7,11 +7,7 @@ class IamgeDirections extends React.Component {
     super(props);
   }
   render() {
-    return (
-      <div>
-        <div />
-      </div>
-    );
+    return <div id={styles.direction}>Roll over or click image to zoom in</div>;
   }
 }
 
