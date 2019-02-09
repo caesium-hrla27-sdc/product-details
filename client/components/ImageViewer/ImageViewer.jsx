@@ -15,7 +15,8 @@ class ImageViewer extends React.Component {
       currentCarouselStart: 0,
       mouseX: 0,
       mouseY: 0,
-      displayPopup: false
+      displayPopup: false,
+      imagePreviewRef: React.createRef()
     };
     this.togglePopup = this.togglePopup.bind(this);
     this.updateMouseCoordinates = this.updateMouseCoordinates.bind(this);
@@ -27,12 +28,19 @@ class ImageViewer extends React.Component {
 
   updateMouseCoordinates(event) {
     this.setState({
-      mouseX: event.screenX,
-      mouseY: event.screenY
+      mouseX: event.clientX,
+      mouseY: event.clientY
     });
   }
 
   render() {
+    let maskX = 0;
+    let maskY = 0;
+    if (this.state.imagePreviewRef.current) {
+      let { x, y } = this.state.imagePreviewRef.current.getBoundingClientRect();
+      maskX = this.state.mouseX - x - 50;
+      maskY = this.state.mouseY - y - 50;
+    }
     return (
       <div id={styles.imageViewerContainer}>
         <div id={styles.imageViewer}>
@@ -40,6 +48,7 @@ class ImageViewer extends React.Component {
             url={this.props.media_urls[this.state.currentMediaIndex]}
             togglePopup={this.togglePopup}
             updateMouseCoordinates={this.updateMouseCoordinates}
+            imagePreviewRef={this.state.imagePreviewRef}
           />
           <ImageDirections />
           <ImageCarousel />
@@ -49,6 +58,21 @@ class ImageViewer extends React.Component {
           />
           <ImageModal />
         </div>
+        <svg>
+          <defs>
+            <mask id="mask">
+              <rect x="0" y="0" width="300" height="300" fill="#4d4d4d" />
+              <rect
+                x={maskX}
+                y={maskY}
+                width="100"
+                height="100"
+                fill="green"
+                stroke="black"
+              />
+            </mask>
+          </defs>
+        </svg>
       </div>
     );
   }

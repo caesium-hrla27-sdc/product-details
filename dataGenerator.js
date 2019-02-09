@@ -30,7 +30,7 @@ for (let i = 0; i < 1000; i++) {
   newProduct.media_urls = [];
   const imageCount = randInt(1, 5);
   for (let i = 0; i < imageCount; i++) {
-    newProduct.media_urls.push(faker.image.imageUrl());
+    newProduct.media_urls.push('http://lorempixel.com/300/300');
   }
   const videoCount = randInt(0, 1);
   for (let i = 0; i < videoCount; i++) {

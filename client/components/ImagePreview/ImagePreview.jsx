@@ -5,42 +5,31 @@ import styles from './style.css';
 class ImagePreview extends React.Component {
   constructor(props) {
     super(props);
-    this.state;
-    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.state = {
+      hover: false
+    };
+    this.toggleHover = this.toggleHover.bind(this);
   }
-  onMouseEnter() {
+  toggleHover() {
     this.props.togglePopup();
+    this.setState({
+      hover: this.state.hover ? false : true
+    });
   }
   render() {
     return (
       <div
-        onMouseEnter={this.onMouseEnter}
+        onMouseEnter={this.toggleHover}
         onMouseMove={this.props.updateMouseCoordinates}
-        onMouseLeave={this.props.togglePopup}
+        onMouseLeave={this.toggleHover}
       >
-        <svg width="300" height="300">
+        <svg width="300" height="300" ref={this.props.imagePreviewRef}>
           <image
             width="300"
             height="300"
             href={this.props.url}
-            id={styles.image}
-            preserveAspectRatio="xMidYMid meet"
+            style={this.state.hover ? { mask: 'url(#mask)' } : {}}
           />
-        </svg>
-        <svg>
-          <defs>
-            <mask id="mask">
-              <rect x="0" y="0" width="300" height="300" fill="#4d4d4d" />
-              <rect
-                x="0"
-                y="0"
-                width="100"
-                height="100"
-                fill="green"
-                stroke="black"
-              />
-            </mask>
-          </defs>
         </svg>
       </div>
     );
