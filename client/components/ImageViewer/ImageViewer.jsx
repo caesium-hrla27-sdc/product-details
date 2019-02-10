@@ -55,6 +55,8 @@ class ImageViewer extends React.Component {
           <ImagePopup
             displayPopup={this.state.displayPopup}
             url={this.props.media_urls[this.state.currentMediaIndex]}
+            translateX={500 - 5 * maskX}
+            translateY={500 - 5 * maskY}
           />
           <ImageModal />
         </div>
@@ -67,7 +69,7 @@ class ImageViewer extends React.Component {
                 y={maskY}
                 width="100"
                 height="100"
-                fill="green"
+                fill="white"
                 stroke="black"
               />
             </mask>

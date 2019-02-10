@@ -8,11 +8,24 @@ class ImagePopup extends React.Component {
   }
   render() {
     return (
-      <div
-        id={styles.popupContainer}
-        style={{ display: this.props.displayPopup ? 'inline' : 'none' }}
-      >
-        <img id={styles.popup} src={this.props.url} />
+      <div style={{ display: this.props.displayPopup ? 'inline' : 'none' }}>
+        <div id={styles.popupContainer1}>
+          <div id={styles.popupContainer2}>
+            <div
+              id={styles.popupContainer3}
+              style={{
+                transform: `translate(${this.props.translateX}px, ${
+                  this.props.translateY
+                }px) scale(3)`
+              }}
+            >
+              <div id={styles.popupBox}>
+                <div id={styles.abovePopup} />
+                <img id={styles.popup} src={this.props.url} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
