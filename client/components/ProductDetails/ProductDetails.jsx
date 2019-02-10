@@ -11,7 +11,7 @@ class ProductDetails extends React.Component {
   render() {
     return (
       <div id={styles.productDetails}>
-        <ImageViewer media_urls={this.props.item.media_urls} />
+        <ImageViewer media={this.props.product.media} />
         <ProductSummary />
       </div>
     );

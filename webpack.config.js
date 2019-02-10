@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: path.resolve(__dirname, './client/'),
+  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, './public/build'),
     filename: 'bundle.js',

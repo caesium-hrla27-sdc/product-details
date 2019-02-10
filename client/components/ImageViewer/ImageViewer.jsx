@@ -45,16 +45,21 @@ class ImageViewer extends React.Component {
       <div id={styles.imageViewerContainer}>
         <div id={styles.imageViewer}>
           <ImagePreview
-            url={this.props.media_urls[this.state.currentMediaIndex]}
+            mediaItem={this.props.media[this.state.currentMediaIndex]}
             togglePopup={this.togglePopup}
             updateMouseCoordinates={this.updateMouseCoordinates}
             imagePreviewRef={this.state.imagePreviewRef}
           />
           <ImageDirections />
-          <ImageCarousel />
+          <ImageCarousel
+            media={this.props.media.slice(
+              this.state.currentCarouselStart,
+              this.state.currentCarouselStart + 3
+            )}
+          />
           <ImagePopup
             displayPopup={this.state.displayPopup}
-            url={this.props.media_urls[this.state.currentMediaIndex]}
+            mediaItem={this.props.media[this.state.currentMediaIndex]}
             translateX={500 - 5 * maskX}
             translateY={500 - 5 * maskY}
           />

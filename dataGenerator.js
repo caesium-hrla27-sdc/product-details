@@ -12,7 +12,9 @@ for (let i = 0; i < 1000; i++) {
   newProduct.breadcrumbs = [];
   const breadcrumbCount = randInt(2, 4);
   for (let i = 0; i < breadcrumbCount; i++) {
-    newProduct.breadcrumbs.push(faker.lorem.word());
+    let crumb = faker.lorem.word();
+    crumb = crumb[0].toUpperCase() + crumb.slice(1);
+    newProduct.breadcrumbs.push(crumb);
   }
   newProduct.description = faker.lorem.lines(1);
   newProduct.size = faker.lorem.lines(1);
@@ -27,16 +29,22 @@ for (let i = 0; i < 1000; i++) {
   newProduct.average_rating = Math.random() * 5;
   newProduct.review_count = randInt(0, 5000);
   newProduct.loves_count = randInt(0, 50000);
-  newProduct.media_urls = [];
+  newProduct.media = [];
   const imageCount = randInt(1, 5);
   for (let i = 0; i < imageCount; i++) {
-    newProduct.media_urls.push('http://lorempixel.com/1920/1920');
+    let mediaObj = {};
+    mediaObj.type = 'image';
+    mediaObj.url = 'http://lorempixel.com/1920/1920';
+    newProduct.media.push(mediaObj);
   }
   const videoCount = randInt(0, 1);
   for (let i = 0; i < videoCount; i++) {
-    newProduct.media_urls.push(
-      'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
-    );
+    let mediaObj = {};
+    mediaObj.type = 'image';
+    mediaObj.url =
+      'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+    newProduct.media.push(mediaObj);
+    newProduct.media.push();
   }
   const newProductDoc = new Product(newProduct);
   newProductDoc.save();

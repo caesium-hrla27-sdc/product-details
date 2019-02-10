@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema({
   average_rating: Number,
   review_count: Number,
   loves_count: Number,
-  media_urls: [String]
+  media: [Object]
 });
 
 const Product = mongoose.model('product', productSchema);

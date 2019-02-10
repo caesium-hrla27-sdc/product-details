@@ -21,7 +21,7 @@ class ImagePopup extends React.Component {
             >
               <div id={styles.popupBox}>
                 <div id={styles.abovePopup} />
-                <img id={styles.popup} src={this.props.url} />
+                <img id={styles.popup} src={this.props.mediaItem.url} />
               </div>
             </div>
           </div>

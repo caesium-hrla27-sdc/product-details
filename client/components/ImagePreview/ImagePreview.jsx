@@ -27,7 +27,7 @@ class ImagePreview extends React.Component {
           <image
             width="300"
             height="300"
-            href={this.props.url}
+            href={this.props.mediaItem.url}
             style={this.state.hover ? { mask: 'url(#mask)' } : {}}
           />
         </svg>

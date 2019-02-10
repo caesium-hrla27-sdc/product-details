@@ -17,9 +17,9 @@ app.use(parser.urlencoded({ extended: true }));
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 
-app.get('/item', (req, res) => {
-  Product.findOne().then(item => {
-    res.status(200).json(item);
+app.get('/product', (req, res) => {
+  Product.findOne().then(product => {
+    res.status(200).json(product);
   });
 });
 app.listen(PORT, () => console.log(`server is listening on PORT: ${PORT}`));

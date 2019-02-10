@@ -9,20 +9,20 @@ import styles from './style.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { item: {} };
-    axios.get('/item').then(({ data }) => {
+    this.state = { product: {} };
+    axios.get('/product').then(({ data }) => {
       console.log(data);
       this.setState({
-        item: data
+        product: data
       });
     });
   }
   render() {
-    if (Object.keys(this.state.item).length !== 0) {
+    if (Object.keys(this.state.product).length !== 0) {
       return (
         <div id={styles.app}>
-          <Breadcrumbs breadcrumbs={this.state.item.breadcrumbs} />
-          <ProductDetails item={this.state.item} />
+          <Breadcrumbs breadcrumbs={this.state.product.breadcrumbs} />
+          <ProductDetails product={this.state.product} />
         </div>
       );
     } else {
