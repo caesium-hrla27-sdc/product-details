@@ -17,8 +17,8 @@ app.use(parser.urlencoded({ extended: true }));
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 
-app.get('/product', (req, res) => {
-  Product.findOne().then(product => {
+app.get('/product/:id', (req, res) => {
+  Product.findOne({ id: req.params.id }).then(product => {
     res.status(200).json(product);
   });
 });

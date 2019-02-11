@@ -1,6 +1,6 @@
 const faker = require('faker');
 const { Product, mongoose } = require('./server/databases/index');
-
+let imageCounter = 0;
 faker.seed(42);
 
 const randInt = (low, high) => {
@@ -8,6 +8,7 @@ const randInt = (low, high) => {
 };
 for (let i = 0; i < 1000; i++) {
   const newProduct = {};
+  newProduct.id = i;
   newProduct.name = faker.commerce.productName();
   newProduct.breadcrumbs = [];
   const breadcrumbCount = randInt(2, 4);
@@ -34,7 +35,8 @@ for (let i = 0; i < 1000; i++) {
   for (let i = 0; i < imageCount; i++) {
     let mediaObj = {};
     mediaObj.type = 'image';
-    mediaObj.url = 'http://lorempixel.com/1920/1920';
+    mediaObj.url = `https://picsum.photos/1920?image=${imageCounter}`;
+    imageCounter++;
     newProduct.media.push(mediaObj);
   }
   const videoCount = randInt(0, 1);
@@ -49,3 +51,5 @@ for (let i = 0; i < 1000; i++) {
   const newProductDoc = new Product(newProduct);
   newProductDoc.save();
 }
+
+console.log('complete');
