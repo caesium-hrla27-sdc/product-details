@@ -15,6 +15,7 @@
   display: flex;
   margin-left: -8px;
   margin-right: -8px;
+  transition: transform 300ms ease 0s;
 }
 .button {
   cursor: pointer;

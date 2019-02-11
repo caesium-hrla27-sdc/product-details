@@ -1,4 +1,4 @@
-#carouselItemContainer1 {
+.carouselItemContainer1 {
   width: 33.33333333333333%;
   flex-shrink: 0;
   padding-left: 8px;
@@ -6,21 +6,20 @@
   box-sizing: border-box;
 }
 
-#carouselItemContainer2 {
+.carouselItemContainer2 {
   display: block;
   position: relative;
-  border-color: transparent;
   border-radius: 7px;
   padding: 1px;
   border-width: 3px;
   border-style: solid;
 }
-#carouselItemContainer3 {
+.carouselItemContainer3 {
   display: block;
   overflow: hidden;
   border-radius: 4px;
 }
-#carouselItemContainer4 {
+.carouselItemContainer4 {
   display: block;
   height: 0;
   position: relative;
@@ -28,7 +27,7 @@
   padding-bottom: 100%;
 }
 
-#imageCarouselMedia {
+.carouselItem {
   display: block;
   height: 100%;
   position: absolute;

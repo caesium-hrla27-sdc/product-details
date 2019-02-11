@@ -12,6 +12,7 @@ class ImageViewer extends React.Component {
     super(props);
     this.state = {
       currentMediaIndex: 0,
+      currentHoverIndex: null,
       currentCarouselStart: 0,
       mouseX: 0,
       mouseY: 0,
@@ -20,6 +21,9 @@ class ImageViewer extends React.Component {
     };
     this.togglePopup = this.togglePopup.bind(this);
     this.updateMouseCoordinates = this.updateMouseCoordinates.bind(this);
+    this.clearCurrentHoverIndex = this.clearCurrentHoverIndex.bind(this);
+    this.updateCurrentHoverIndex = this.updateCurrentHoverIndex.bind(this);
+    this.updateCurrentMediaIndex = this.updateCurrentMediaIndex.bind(this);
   }
 
   togglePopup() {
@@ -33,6 +37,18 @@ class ImageViewer extends React.Component {
     });
   }
 
+  updateCurrentHoverIndex(index) {
+    this.setState({ currentHoverIndex: index });
+  }
+
+  updateCurrentMediaIndex(index) {
+    this.setState({ currentMediaIndex: index });
+  }
+
+  clearCurrentHoverIndex() {
+    this.setState({ currentHoverIndex: null });
+  }
+
   render() {
     let maskX = 0;
     let maskY = 0;
@@ -41,21 +57,25 @@ class ImageViewer extends React.Component {
       maskX = this.state.mouseX - x - 50;
       maskY = this.state.mouseY - y - 50;
     }
+    let imagePreviewIndex = this.state.currentHoverIndex
+      ? this.state.currentHoverIndex
+      : this.state.currentMediaIndex;
     return (
       <div id={styles.imageViewerContainer}>
         <div id={styles.imageViewer}>
           <ImagePreview
-            mediaItem={this.props.media[this.state.currentMediaIndex]}
+            mediaItem={this.props.media[imagePreviewIndex]}
             togglePopup={this.togglePopup}
             updateMouseCoordinates={this.updateMouseCoordinates}
             imagePreviewRef={this.state.imagePreviewRef}
           />
           <ImageDirections />
           <ImageCarousel
-            media={this.props.media.slice(
-              this.state.currentCarouselStart,
-              this.state.currentCarouselStart + 3
-            )}
+            currentMediaIndex={this.state.currentMediaIndex}
+            media={this.props.media}
+            clearCurrentHoverIndex={this.clearCurrentHoverIndex}
+            updateCurrentHoverIndex={this.updateCurrentHoverIndex}
+            updateCurrentMediaIndex={this.updateCurrentMediaIndex}
           />
           <ImagePopup
             displayPopup={this.state.displayPopup}
