@@ -1,3 +1,17 @@
-#image {
-  mask: url(#mask);
+#previewContainer1 {
+  display: block;
+}
+
+#previewContainer2 {
+  position: relative;
+}
+
+#previewContainer3 {
+  position: relative;
+  overflow: hidden;
+}
+
+#previewContainer4 {
+  transition: transform 300ms ease 0s;
+  display: flex;
 }

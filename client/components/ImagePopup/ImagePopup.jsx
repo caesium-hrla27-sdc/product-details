@@ -8,7 +8,7 @@ class ImagePopup extends React.Component {
   }
   render() {
     return (
-      <div style={{ display: this.props.displayPopup ? 'inline' : 'none' }}>
+      <div style={{ display: this.props.displayPopup ? 'inline' : 'none' }} ref={this.props.imagePreviewRef}>
         <div id={styles.popupContainer1}>
           <div id={styles.popupContainer2}>
             <div

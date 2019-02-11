@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { product: {} };
-    let id = 7;
+    let id = 2;
     axios.get('/product/' + id).then(({ data }) => {
       console.log(data);
       this.setState({

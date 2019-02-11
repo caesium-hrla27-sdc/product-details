@@ -24,6 +24,12 @@
   border-width: 0;
   border-style: solid;
 }
+
+.button:disabled {
+  cursor: default;
+  color: #eee;
+}
+
 .leftButton {
   font-size: 36px;
   line-height: 0;
@@ -51,4 +57,5 @@
 .imageArrow {
   width: 0.5em;
   height: 1em;
+  fill: currentColor;
 }

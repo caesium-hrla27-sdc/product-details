@@ -2,35 +2,44 @@ import React from 'react';
 
 import styles from './style.css';
 
+import ImagePreviewItem from '../ImagePreviewItem/ImagePreviewItem';
+
 class ImagePreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       hover: false
     };
-    this.toggleHover = this.toggleHover.bind(this);
   }
-  toggleHover() {
-    this.props.togglePopup();
-    this.setState({
-      hover: this.state.hover ? false : true
-    });
-  }
+
   render() {
     return (
       <div
-        onMouseEnter={this.toggleHover}
+        id={styles.previewContainer1}
         onMouseMove={this.props.updateMouseCoordinates}
-        onMouseLeave={this.toggleHover}
+        ref={this.props.imagePreviewRef}
       >
-        <svg width="300" height="300" ref={this.props.imagePreviewRef}>
-          <image
-            width="300"
-            height="300"
-            href={this.props.mediaItem.url}
-            style={this.state.hover ? { mask: 'url(#mask)' } : {}}
-          />
-        </svg>
+        <div id={styles.previewContainer2}>
+          <div id={styles.previewContainer3}>
+            <div
+              id={styles.previewContainer4}
+              style={{
+                transform: `translate3d(${this.props.current *
+                  -300}px, 0px, 0px)`
+              }}
+            >
+              {this.props.media.map((mediaItem, index) => (
+                <ImagePreviewItem
+                  mediaItem={mediaItem}
+                  index={index}
+                  key={index}
+                  togglePopup={this.props.togglePopup}
+                  current={this.props.current}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

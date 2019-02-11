@@ -64,14 +64,15 @@ class ImageViewer extends React.Component {
       <div id={styles.imageViewerContainer}>
         <div id={styles.imageViewer}>
           <ImagePreview
-            mediaItem={this.props.media[imagePreviewIndex]}
+            media={this.props.media}
+            current={imagePreviewIndex}
             togglePopup={this.togglePopup}
             updateMouseCoordinates={this.updateMouseCoordinates}
             imagePreviewRef={this.state.imagePreviewRef}
           />
           <ImageDirections />
           <ImageCarousel
-            currentMediaIndex={this.state.currentMediaIndex}
+            current={this.state.currentMediaIndex}
             media={this.props.media}
             clearCurrentHoverIndex={this.clearCurrentHoverIndex}
             updateCurrentHoverIndex={this.updateCurrentHoverIndex}
