@@ -39,15 +39,14 @@ for (let i = 0; i < 1000; i++) {
     imageCounter++;
     newProduct.media.push(mediaObj);
   }
-  const videoCount = randInt(0, 1);
-  for (let i = 0; i < videoCount; i++) {
-    let mediaObj = {};
-    mediaObj.type = 'image';
-    mediaObj.url =
-      'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
-    newProduct.media.push(mediaObj);
-    newProduct.media.push();
-  }
+  // const videoCount = randInt(0, 3);
+  // for (let i = 0; i < videoCount; i++) {
+  //   let mediaObj = {};
+  //   mediaObj.type = 'image';
+  //   mediaObj.url =
+  //     'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+  //   newProduct.media.push(mediaObj);
+  // }
   const newProductDoc = new Product(newProduct);
   newProductDoc.save();
 }
