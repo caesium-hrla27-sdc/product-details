@@ -10,7 +10,6 @@ class ImagePreviewItem extends React.Component {
     };
     this.toggleHover = this.toggleHover.bind(this);
     this.openModal = this.openModal.bind(this);
-
   }
   toggleHover() {
     this.props.togglePopup();
@@ -19,10 +18,10 @@ class ImagePreviewItem extends React.Component {
     });
   }
 
-  openModal(){
+  openModal() {
+    console.log(this.props.index);
     this.props.toggleModal(this.props.index);
   }
-
 
   render() {
     return (

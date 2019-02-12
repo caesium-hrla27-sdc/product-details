@@ -40,17 +40,19 @@ class ImageViewer extends React.Component {
     });
   }
 
-
-  
   //TODO refactor below
-  toggleModal(index=0){
-    this.setState({ displayModal: this.state.displayModal ? false : true, currentModalIndex: index });
+  toggleModal(index) {
+    if (!index) {
+      index = 0;
+    }
+    this.setState({
+      displayModal: this.state.displayModal ? false : true,
+      currentModalIndex: index
+    });
   }
 
-
-  updateCurrentModalIndex(index){
+  updateCurrentModalIndex(index) {
     this.setState({ currentModalIndex: index });
-
   }
 
   updateCurrentHoverIndex(index) {
@@ -102,11 +104,13 @@ class ImageViewer extends React.Component {
             translateX={500 - 5 * maskX}
             translateY={500 - 5 * maskY}
           />
-          <ImageModal 
-          media={this.props.media}
-          displayModal={this.state.displayModal}
-          currentModalIndex={this.state.currentModalIndex}
-        />
+          <ImageModal
+            media={this.props.media}
+            toggleModal={this.toggleModal}
+            displayModal={this.state.displayModal}
+            currentModalIndex={this.state.currentModalIndex}
+            updateCurrentModalIndex={this.updateCurrentModalIndex}
+          />
         </div>
         <svg>
           <defs>

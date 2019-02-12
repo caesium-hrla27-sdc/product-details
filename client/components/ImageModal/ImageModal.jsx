@@ -7,7 +7,38 @@ import ModalMainCarouselItem from '../ModalMainCarouselItem/ModalMainCarouselIte
 class ImageModal extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      leftDisabled: true,
+      rightDisabled: false
+    };
+    this.moveLeft = this.moveLeft.bind(this);
+    this.moveRight = this.moveRight.bind(this);
   }
+
+  moveLeft() {
+    if (!this.state.leftDisabled) {
+      if (this.props.currentModalIndex === 1) {
+        this.setState({ leftDisabled: true });
+      }
+      this.props.updateCurrentModalIndex(this.props.currentModalIndex - 1);
+      this.setState({
+        rightDisabled: false
+      });
+    }
+  }
+
+  moveRight() {
+    if (!this.state.rightDisabled) {
+      if (this.props.currentModalIndex === this.props.media.length - 2) {
+        this.setState({ rightDisabled: true });
+      }
+      this.props.updateCurrentModalIndex(this.props.currentModalIndex + 1);
+      this.setState({
+        leftDisabled: false
+      });
+    }
+  }
+
   render() {
     return (
       <div
@@ -25,7 +56,13 @@ class ImageModal extends React.Component {
                       <div id={styles.mainCarousel}>
                         <div id={styles.mainCarouselContainer1}>
                           <div id={styles.mainCarouselContainer2}>
-                            <div id={styles.mainCarouselContainer3}>
+                            <div
+                              id={styles.mainCarouselContainer3}
+                              style={{
+                                transform: `translate3d(${-852 *
+                                  this.props.currentModalIndex}px, 0px, 0px)`
+                              }}
+                            >
                               {this.props.media.map((mediaItem, index) => (
                                 <ModalMainCarouselItem
                                   mediaItem={mediaItem}
@@ -38,6 +75,13 @@ class ImageModal extends React.Component {
                           <button
                             id={styles.leftButton}
                             className={styles.button}
+                            onClick={this.moveLeft}
+                            style={
+                              this.props.media.length < 2
+                                ? { display: 'none' }
+                                : {}
+                            }
+                            disabled={this.state.leftDisabled}
                           >
                             <svg
                               viewBox="0 0 16 32"
@@ -49,6 +93,13 @@ class ImageModal extends React.Component {
                           <button
                             id={styles.rightButton}
                             className={styles.button}
+                            onClick={this.moveRight}
+                            style={
+                              this.props.media.length < 2
+                                ? { display: 'none' }
+                                : {}
+                            }
+                            disabled={this.state.rightDisabled}
                           >
                             <svg
                               viewBox="0 0 16 32"
@@ -63,7 +114,11 @@ class ImageModal extends React.Component {
                       <div id={styles.secondaryCarousel} />
                     </div>
                   </div>
-                  <button id={styles.closeButton} className={styles.button}>
+                  <button
+                    id={styles.closeButton}
+                    className={styles.button}
+                    onClick={this.props.toggleModal}
+                  >
                     <svg viewBox="0 0 17 17" id={styles.svgCloseButton}>
                       <path d="M17 7.5H9.5V0h-2v7.5H0v2h7.5V17h2V9.5H17" />
                     </svg>
