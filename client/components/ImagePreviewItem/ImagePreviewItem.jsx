@@ -9,6 +9,8 @@ class ImagePreviewItem extends React.Component {
       hover: false
     };
     this.toggleHover = this.toggleHover.bind(this);
+    this.openModal = this.openModal.bind(this);
+
   }
   toggleHover() {
     this.props.togglePopup();
@@ -16,12 +18,19 @@ class ImagePreviewItem extends React.Component {
       hover: this.state.hover ? false : true
     });
   }
+
+  openModal(){
+    this.props.toggleModal(this.props.index);
+  }
+
+
   render() {
     return (
       <div
         className={styles.previewItemContainer1}
         onMouseEnter={this.toggleHover}
         onMouseLeave={this.toggleHover}
+        onClick={this.openModal}
       >
         <div className={styles.previewItemContainer2}>
           <svg width="300" height="300">

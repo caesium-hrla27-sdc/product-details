@@ -1,14 +1,157 @@
-#imageViewerContainer {
-  flex-basis: auto;
+#modalContainer1 {
   display: block;
-  position: relative;
-  min-width: 0;
-  width: 300px;
+}
+#modalContainer2 {
+  display: block;
+}
+#modalContainer3 {
+  display: block;
+}
+#modalContainer4 {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  backface-visibility: hidden;
+  z-index: 1050;
+  flex-direction: column;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-#imageViewer {
+#modalContainer5 {
+  width: 980px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  margin: auto;
+}
+
+#modalContainer6 {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 300px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+#modalHeader {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 50px;
+  border-bottom-width: 1px;
+  border-color: #eee;
+}
+
+#modalBody {
+  display: block;
+  position: relative;
+  padding-right: 32px;
+  padding-left: 32px;
+  padding-top: 0px;
+  padding-bottom: 16px;
+}
+
+#modalBodyContainer {
+  position: relative;
+}
+
+#mainCarousel {
+  display: block;
+}
+
+#secondaryCarousel {
+  display: block;
+}
+
+#divider {
+  display: block;
+  color: rgba(0, 0, 0, 0.063);
+  margin-bottom: 16px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+#mainCarouselContainer1 {
+  position: relative;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+#mainCarouselContainer2 {
+  position: relative;
+  overflow: hidden;
+}
+#mainCarouselContainer3 {
+  transform: translate3d(0px, 0px, 0px);
+  transition: transform 300ms ease 0s;
+  display: flex;
+}
+#leftButton {
+  font-size: 36px;
+  line-height: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  left: 0;
+  top: 0;
+  width: 32px;
+}
+.button {
+  background-color: transparent;
+  border-width: 0;
+}
+#rightButton {
+  font-size: 36px;
+  line-height: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  text-align: right;
+  right: 0;
+  top: 0;
+  width: 32px;
+}
+
+#closeButton {
+  transition: opacity 0.2s;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 3;
+  padding: 16px;
+  font-size: 18px;
+  line-height: 0;
+  color: #000;
+  border-radius: 0;
+}
+
+#svgCloseButton {
+  display: inline-block;
+  height: 1em;
+  fill: currentColor;
+  position: relative;
+  vertical-align: text-bottom;
+  width: 1em;
+  transform: rotate(45deg);
+}
+
+#modalBackground {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  backface-visibility: hidden;
+  display: block;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.25;
+  z-index: 1049;
 }

@@ -13,17 +13,20 @@ class ImageViewer extends React.Component {
     this.state = {
       currentMediaIndex: 0,
       currentHoverIndex: null,
-      currentCarouselStart: 0,
+      currentModalIndex: 0,
       mouseX: 0,
       mouseY: 0,
       displayPopup: false,
+      displayModal: false,
       imagePreviewRef: React.createRef()
     };
     this.togglePopup = this.togglePopup.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
     this.updateMouseCoordinates = this.updateMouseCoordinates.bind(this);
     this.clearCurrentHoverIndex = this.clearCurrentHoverIndex.bind(this);
     this.updateCurrentHoverIndex = this.updateCurrentHoverIndex.bind(this);
     this.updateCurrentMediaIndex = this.updateCurrentMediaIndex.bind(this);
+    this.updateCurrentModalIndex = this.updateCurrentModalIndex.bind(this);
   }
 
   togglePopup() {
@@ -35,6 +38,19 @@ class ImageViewer extends React.Component {
       mouseX: event.clientX,
       mouseY: event.clientY
     });
+  }
+
+
+  
+  //TODO refactor below
+  toggleModal(index=0){
+    this.setState({ displayModal: this.state.displayModal ? false : true, currentModalIndex: index });
+  }
+
+
+  updateCurrentModalIndex(index){
+    this.setState({ currentModalIndex: index });
+
   }
 
   updateCurrentHoverIndex(index) {
@@ -67,8 +83,10 @@ class ImageViewer extends React.Component {
             media={this.props.media}
             current={imagePreviewIndex}
             togglePopup={this.togglePopup}
+            toggleModal={this.toggleModal}
             updateMouseCoordinates={this.updateMouseCoordinates}
             imagePreviewRef={this.state.imagePreviewRef}
+            updateCurrentModalIndex={this.updateCurrentModalIndex}
           />
           <ImageDirections />
           <ImageCarousel
@@ -84,7 +102,11 @@ class ImageViewer extends React.Component {
             translateX={500 - 5 * maskX}
             translateY={500 - 5 * maskY}
           />
-          <ImageModal />
+          <ImageModal 
+          media={this.props.media}
+          displayModal={this.state.displayModal}
+          currentModalIndex={this.state.currentModalIndex}
+        />
         </div>
         <svg>
           <defs>

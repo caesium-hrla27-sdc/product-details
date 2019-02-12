@@ -11,7 +11,6 @@ class ImagePreview extends React.Component {
       hover: false
     };
   }
-
   render() {
     return (
       <div
@@ -35,6 +34,7 @@ class ImagePreview extends React.Component {
                   key={index}
                   togglePopup={this.props.togglePopup}
                   current={this.props.current}
+                  toggleModal={this.props.toggleModal}
                 />
               ))}
             </div>
