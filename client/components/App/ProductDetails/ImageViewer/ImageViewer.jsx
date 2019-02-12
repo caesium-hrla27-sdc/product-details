@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ImagePreview from '../ImagePreview/ImagePreview';
-import ImageDirections from '../ImageDirections/ImageDirections';
-import ImageCarousel from '../ImageCarousel/ImageCarousel';
-import ImagePopup from '../ImagePopup/ImagePopup';
-import ImageModal from '../ImageModal/ImageModal';
+import MainCarousel from './MainCarousel/MainCarousel';
+import ImageDirections from './ImageDirections/ImageDirections';
+import ImageCarousel from './ImageCarousel/ImageCarousel';
+import ImagePopup from './ImagePopup/ImagePopup';
+import ImageModal from './ImageModal/ImageModal';
 import styles from './style.css';
 
 class ImageViewer extends React.Component {
@@ -27,6 +27,10 @@ class ImageViewer extends React.Component {
     this.updateCurrentHoverIndex = this.updateCurrentHoverIndex.bind(this);
     this.updateCurrentMediaIndex = this.updateCurrentMediaIndex.bind(this);
     this.updateCurrentModalIndex = this.updateCurrentModalIndex.bind(this);
+    this.previewClick = this.previewClick.bind(this);
+    this.previewEnter = this.previewEnter.bind(this);
+    this.previewLeave = this.previewLeave.bind(this);
+    this.previewMove = this.previewMove.bind(this);
   }
 
   togglePopup() {
@@ -40,7 +44,6 @@ class ImageViewer extends React.Component {
     });
   }
 
-  //TODO refactor below
   toggleModal(index) {
     if (!index) {
       index = 0;
@@ -67,6 +70,30 @@ class ImageViewer extends React.Component {
     this.setState({ currentHoverIndex: null });
   }
 
+  previewEnter(index, event) {
+    event.target.style.mask = 'url(#mask)';
+    this.setState({
+      displayPopup: this.state.displayPopup ? false : true
+    });
+  }
+
+  previewMove(event) {
+    this.setState({ mouseX: event.clientX, mouseY: event.clientY });
+  }
+
+  previewLeave(index, event) {
+    event.target.style.mask = '';
+
+    this.setState({ displayPopup: this.state.displayPopup ? false : true });
+  }
+
+  previewClick(index, event) {
+    this.setState({
+      currentModalIndex: index,
+      displayModal: this.state.displayModal ? false : true
+    });
+  }
+
   render() {
     let maskX = 0;
     let maskY = 0;
@@ -81,15 +108,22 @@ class ImageViewer extends React.Component {
     return (
       <div id={styles.imageViewerContainer}>
         <div id={styles.imageViewer}>
-          <ImagePreview
-            media={this.props.media}
-            current={imagePreviewIndex}
-            togglePopup={this.togglePopup}
-            toggleModal={this.toggleModal}
-            updateMouseCoordinates={this.updateMouseCoordinates}
-            imagePreviewRef={this.state.imagePreviewRef}
-            updateCurrentModalIndex={this.updateCurrentModalIndex}
-          />
+          <div id={styles.previewContainer1} ref={this.state.imagePreviewRef}>
+            <div id={styles.previewContainer2}>
+              <div id={styles.previewContainer3}>
+                <MainCarousel
+                  media={this.props.media}
+                  current={imagePreviewIndex}
+                  itemWidth={300}
+                  imageWidth={300}
+                  onMouseEnter={this.previewEnter}
+                  onMouseLeave={this.previewLeave}
+                  onMouseMove={this.previewMove}
+                  onClick={this.previewClick}
+                />
+              </div>
+            </div>
+          </div>
           <ImageDirections />
           <ImageCarousel
             current={this.state.currentMediaIndex}

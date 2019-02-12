@@ -1,0 +1,4 @@
+#mainCarouselContainer {
+  transition: transform 300ms ease 0s;
+  display: flex;
+}

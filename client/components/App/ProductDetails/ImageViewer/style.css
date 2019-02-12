@@ -12,3 +12,16 @@
   margin-right: auto;
   max-width: 300px;
 }
+
+#previewContainer1 {
+  display: block;
+}
+
+#previewContainer2 {
+  position: relative;
+}
+
+#previewContainer3 {
+  position: relative;
+  overflow: hidden;
+}

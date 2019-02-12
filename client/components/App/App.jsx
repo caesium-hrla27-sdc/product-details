@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
-import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
-import ProductDetails from '../ProductDetails/ProductDetails';
+import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
+import ProductDetails from './ProductDetails/ProductDetails';
 
 import styles from './style.css';
 

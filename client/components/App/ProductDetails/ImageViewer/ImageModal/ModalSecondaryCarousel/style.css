@@ -1,0 +1,56 @@
+#mainCarousel {
+  display: block;
+}
+
+#mainCarouselContainer1 {
+  position: relative;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+#mainCarouselContainer2 {
+  position: relative;
+  overflow: hidden;
+}
+#mainCarouselContainer3 {
+  transition: transform 300ms ease 0s;
+  display: flex;
+}
+#leftButton {
+  font-size: 36px;
+  line-height: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  left: 0;
+  top: 0;
+  width: 32px;
+}
+.button {
+  background-color: transparent;
+  border-width: 0;
+  cursor: pointer;
+}
+
+.button:disabled {
+  color: #eee;
+  cursor: default;
+}
+
+#rightButton {
+  font-size: 36px;
+  line-height: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  text-align: right;
+  right: 0;
+  top: 0;
+  width: 32px;
+}
+
+.imageArrow {
+  width: 0.5em;
+  height: 1em;
+  fill: currentColor;
+}

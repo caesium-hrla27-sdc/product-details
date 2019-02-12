@@ -1,0 +1,12 @@
+.previewItemContainer1 {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.previewItemContainer2 {
+  display: block;
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100%;
+}

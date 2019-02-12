@@ -1,6 +1,6 @@
 import React from 'react';
-import ImageViewer from '../ImageViewer/ImageViewer';
-import ProductSummary from '../ProductSummary/ProductSummary';
+import ImageViewer from './ImageViewer/ImageViewer';
+import ProductSummary from './ProductSummary/ProductSummary';
 
 import styles from './style.css';
 

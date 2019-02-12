@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ImageCarouselItem from '../ImageCarouselItem/ImageCarouselItem';
+import ImageCarouselItem from './ImageCarouselItem/ImageCarouselItem';
 
 import styles from './style.css';
 
@@ -66,7 +66,7 @@ class ImageCarousel extends React.Component {
             </div>
           </div>
           <button
-          style={this.props.media.length <= 3 ? { display: 'none' } : {}}
+            style={this.props.media.length <= 3 ? { display: 'none' } : {}}
             disabled={this.state.leftDisabled}
             onClick={this.decrementPageNumber}
             className={`${styles.leftButton} ${styles.button}`}
@@ -77,7 +77,7 @@ class ImageCarousel extends React.Component {
             </svg>
           </button>
           <button
-          style={this.props.media.length <= 3 ? { display: 'none' } : {}}
+            style={this.props.media.length <= 3 ? { display: 'none' } : {}}
             disabled={this.state.rightDisabled}
             onClick={this.incrementPageNumber}
             className={`${styles.rightButton} ${styles.button}`}
