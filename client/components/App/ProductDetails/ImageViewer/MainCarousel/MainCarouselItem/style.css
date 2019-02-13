@@ -4,9 +4,10 @@
 }
 
 .previewItemContainer2 {
-  display: block;
-  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   position: relative;
   overflow: hidden;
-  padding-bottom: 100%;
 }

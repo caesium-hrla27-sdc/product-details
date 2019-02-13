@@ -15,16 +15,14 @@ class MainCarouselItem extends React.Component {
               width={this.props.imageWidth}
               height={this.props.imageWidth}
               href={this.props.mediaItem.url}
-              onMouseEnter={this.props.onMouseEnter.bind(
-                null,
-                this.props.index
-              )}
-              onMouseLeave={this.props.onMouseLeave.bind(
-                null,
-                this.props.index
-              )}
-              onMouseMove={this.props.onMouseMove}
-              onClick={this.props.onClick.bind(null, this.props.index)}
+              onMouseEnter={event =>
+                this.props.onMouseEnter(this.props.index, event)
+              }
+              onMouseLeave={event =>
+                this.props.onMouseLeave(this.props.index, event)
+              }
+              onMouseMove={event => this.props.onMouseMove(event)}
+              onClick={event => this.props.onClick(this.props.index, event)}
             />
           </svg>
         </div>

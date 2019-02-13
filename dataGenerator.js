@@ -17,8 +17,13 @@ for (let i = 0; i < 1000; i++) {
     crumb = crumb[0].toUpperCase() + crumb.slice(1);
     newProduct.breadcrumbs.push(crumb);
   }
-  newProduct.description = faker.lorem.lines(1);
-  newProduct.size = faker.lorem.lines(1);
+  newProduct.description = faker.lorem
+    .lines(1)
+    .split(' ')
+    .map(word => word[0].toUpperCase() + word.slice(1))
+    .join(' ')
+    .slice(0, -1);
+  newProduct.size = faker.lorem.word();
   newProduct.item_number = randInt(10000000, 99999999);
   newProduct.price = faker.commerce.price();
   newProduct.details = faker.lorem.paragraphs();

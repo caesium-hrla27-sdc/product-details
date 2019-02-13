@@ -12,7 +12,7 @@ class MainCarousel extends React.Component {
       <div
         id={styles.mainCarouselContainer}
         style={{
-          transform: `translate3d(${this.props.current *
+          transform: `translate3d(${this.props.currentIndex *
             -this.props.itemWidth}px, 0px, 0px)`
         }}
       >

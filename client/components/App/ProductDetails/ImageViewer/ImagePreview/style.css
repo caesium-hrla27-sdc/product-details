@@ -1,3 +1,10 @@
+#imagePreview {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+}
+
 #previewContainer1 {
   display: block;
 }
@@ -11,7 +18,16 @@
   overflow: hidden;
 }
 
-#previewContainer4 {
-  transition: transform 300ms ease 0s;
-  display: flex;
+#secondaryCarouselContainer1 {
+  display: block;
+}
+
+#secondaryCarouselContainer2 {
+  position: relative;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+#secondaryCarouselContainer3 {
+  position: relative;
+  overflow: hidden;
 }

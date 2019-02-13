@@ -39,13 +39,23 @@
   width: 100%;
 }
 
-#modalHeader {
+#modalHeaderContainer {
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 32px;
   padding-right: 50px;
-  border-bottom-width: 1px;
+  border-width: 0px 0px 1px 0px;
   border-color: #eee;
+  border-style: solid;
+}
+
+#modalHeader {
+  font-weight: 700;
+  word-wrap: break-word;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 0px;
 }
 
 #modalBody {

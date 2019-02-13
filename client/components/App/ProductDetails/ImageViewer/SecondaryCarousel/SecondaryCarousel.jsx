@@ -1,19 +1,20 @@
 import React from 'react';
 
-import ImageCarouselItem from './ImageCarouselItem/ImageCarouselItem';
+import SecondaryCarouselItem from './SecondaryCarouselItem/SecondaryCarouselItem';
 
 import styles from './style.css';
 
-class ImageCarousel extends React.Component {
+class SecondaryCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      hoverIndex: null,
       pageNumber: 0,
       leftDisabled: true,
       rightDisabled: false
     };
-    this.incrementPageNumber = this.incrementPageNumber.bind(this);
     this.decrementPageNumber = this.decrementPageNumber.bind(this);
+    this.incrementPageNumber = this.incrementPageNumber.bind(this);
   }
 
   decrementPageNumber() {
@@ -41,43 +42,56 @@ class ImageCarousel extends React.Component {
   }
 
   render() {
+    let container4Style = {
+      transform: `translate3d(${this.state.pageNumber *
+        -this.props.pageWidth}px, 0px, 0px)`
+    };
+    if (this.props.pageSize >= this.props.media.length) {
+      container4Style.justifyContent = 'center';
+    }
+
     return (
-      <div id={styles.carouselContainer1}>
-        <div id={styles.carouselContainer2}>
-          <div id={styles.carouselContainer3}>
+      <div id={styles.secondaryCarouselContainer1}>
+        <div id={styles.secondaryCarouselContainer2}>
+          <div id={styles.secondaryCarouselContainer3}>
             <div
-              id={styles.carouselContainer4}
-              style={{
-                transform: `translate3d(${this.state.pageNumber *
-                  -252}px, 0px, 0px)`
-              }}
+              id={styles.secondaryCarouselContainer4}
+              style={container4Style}
             >
               {this.props.media.map((mediaItem, index) => (
-                <ImageCarouselItem
+                <SecondaryCarouselItem
                   mediaItem={mediaItem}
                   key={index}
                   index={index}
-                  current={this.props.current === index}
-                  clearCurrentHoverIndex={this.props.clearCurrentHoverIndex}
-                  updateCurrentHoverIndex={this.props.updateCurrentHoverIndex}
-                  updateCurrentMediaIndex={this.props.updateCurrentMediaIndex}
+                  selected={this.props.selectedIndex === index}
+                  onMouseEnter={this.props.onMouseEnter}
+                  onMouseLeave={this.props.onMouseLeave}
+                  onClick={this.props.onClick}
+                  pageSize={this.props.pageSize}
                 />
               ))}
             </div>
           </div>
           <button
-            style={this.props.media.length <= 3 ? { display: 'none' } : {}}
+            style={
+              this.props.media.length <= this.props.pageSize
+                ? { display: 'none' }
+                : {}
+            }
             disabled={this.state.leftDisabled}
             onClick={this.decrementPageNumber}
             className={`${styles.leftButton} ${styles.button}`}
           >
-            {/* <img className={styles.imageArrow} src={leftArrow} /> */}
             <svg viewBox="0 0 16 32" className={styles.imageArrow}>
               <path d="M2.2 16.052l13.5-14.33c.1-.098.3-.397.3-.695 0-.498-.4-.995-.9-.995-.3 0-.5.2-.6.298L.4 15.256c-.2.298-.4.497-.4.796 0 .298.1.398.2.497l.1.1L14.5 31.67c.1.1.3.3.6.3.5 0 .9-.5.9-.996 0-.3-.2-.498-.3-.697L2.2 16.05z" />
             </svg>
           </button>
           <button
-            style={this.props.media.length <= 3 ? { display: 'none' } : {}}
+            style={
+              this.props.media.length <= this.props.pageSize
+                ? { display: 'none' }
+                : {}
+            }
             disabled={this.state.rightDisabled}
             onClick={this.incrementPageNumber}
             className={`${styles.rightButton} ${styles.button}`}
@@ -92,4 +106,4 @@ class ImageCarousel extends React.Component {
   }
 }
 
-export default ImageCarousel;
+export default SecondaryCarousel;
