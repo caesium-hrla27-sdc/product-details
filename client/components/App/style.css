@@ -1,4 +1,16 @@
 #app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+#contentContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+#main {
   flex-direction: column;
   padding-left: 22px;
   padding-right: 22px;
@@ -7,4 +19,13 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
+}
+
+#content {
+  display: block;
+}
+
+#productDetailsContainer1,
+#productDetailsContainer2 {
+  display: block;
 }

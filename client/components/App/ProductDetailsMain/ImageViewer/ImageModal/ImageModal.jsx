@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './style.css';
 
 import ModalMainCarousel from './ModalMainCarousel/ModalMainCarousel';
-import SecondaryCarousel from '../../../../SecondaryCarousel/SecondaryCarousel';
+import SecondaryCarousel from '../SecondaryCarousel/SecondaryCarousel';
 
 class ImageModal extends React.Component {
   constructor(props) {

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import MainCarousel from '../MainCarousel/MainCarousel';
-import ImageDirections from '../ImageDirections/ImageDirections';
-import ImagePopup from '../ImagePopup/ImagePopup';
-import SecondaryCarousel from '../../../../SecondaryCarousel/SecondaryCarousel';
+import ImageDirections from './ImageDirections/ImageDirections';
+import ImagePopup from './ImagePopup/ImagePopup';
+import SecondaryCarousel from '..//SecondaryCarousel/SecondaryCarousel';
 
 import styles from './style.css';
 
