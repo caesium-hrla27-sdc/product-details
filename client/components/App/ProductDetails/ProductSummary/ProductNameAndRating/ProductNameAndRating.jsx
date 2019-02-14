@@ -8,7 +8,7 @@ class ProductNameAndRating extends React.Component {
   }
   render() {
     return (
-      <div id={styles.container1}>
+      <div id={styles.container}>
         <h1 id={styles.nameAndDescription}>
           <a id={styles.nameBox}>
             <span id={styles.name}>{this.props.product.name}</span>

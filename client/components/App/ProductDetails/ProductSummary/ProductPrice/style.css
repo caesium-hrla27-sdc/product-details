@@ -1,37 +1,24 @@
-.carouselItemContainer1 {
-  flex-shrink: 0;
-  padding-left: 8px;
-  padding-right: 8px;
-  box-sizing: border-box;
+#container {
+  flex-basis: auto;
+  padding-left: 6px;
+  padding-right: 6px;
+  display: block;
+  min-width: 0;
+  width: 124px;
 }
 
-.carouselItemContainer2 {
+#priceBox {
   display: block;
-  position: relative;
-  border-radius: 7px;
-  padding: 1px;
-  border-width: 3px;
-  border-style: solid;
-}
-.carouselItemContainer3 {
-  display: block;
-  overflow: hidden;
-  border-radius: 4px;
-}
-.carouselItemContainer4 {
-  display: block;
-  height: 0;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
-.carouselItem {
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-  width: 100%;
+#message {
+  font-weight: 700;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.25;
 }
