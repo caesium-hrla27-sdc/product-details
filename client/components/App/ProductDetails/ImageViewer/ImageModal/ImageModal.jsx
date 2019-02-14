@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './style.css';
 
 import ModalMainCarousel from './ModalMainCarousel/ModalMainCarousel';
-import SecondaryCarousel from '../../../../SecondaryCarousel/SecondaryCarousel';
+import SecondaryCarousel from '../SecondaryCarousel/SecondaryCarousel';
 
 class ImageModal extends React.Component {
   constructor(props) {
@@ -50,15 +50,18 @@ class ImageModal extends React.Component {
   }
 
   render() {
-    let mainCarouselIndex = this.state.hoverIndex
-      ? this.state.hoverIndex
-      : this.state.currentIndex
-      ? this.state.currentIndex
-      : this.props.initialIndex;
+    let mainCarouselIndex = this.props.initialIndex;
+    if (this.state.currentIndex !== null) {
+      mainCarouselIndex = this.state.currentIndex;
+    }
+    if (this.state.hoverIndex !== null) {
+      mainCarouselIndex = this.state.hoverIndex;
+    }
 
-    let selectedIndex = this.state.currentIndex
-      ? this.state.currentIndex
-      : this.props.initialIndex;
+    let selectedIndex = this.props.initialIndex;
+    if (this.state.currentIndex !== null) {
+      selectedIndex = this.state.currentIndex;
+    }
     return (
       <div
         id={styles.modalContainer1}

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import MainCarousel from '../MainCarousel/MainCarousel';
-import ImageDirections from '../ImageDirections/ImageDirections';
-import ImagePopup from '../ImagePopup/ImagePopup';
-import SecondaryCarousel from '../../../../SecondaryCarousel/SecondaryCarousel';
+import ImageDirections from './ImageDirections/ImageDirections';
+import ImagePopup from './ImagePopup/ImagePopup';
+import SecondaryCarousel from '../SecondaryCarousel/SecondaryCarousel';
 
 import styles from './style.css';
 
@@ -80,9 +80,10 @@ class ImagePreview extends React.Component {
       maskX = this.state.mouseX - x - 50;
       maskY = this.state.mouseY - y - 50;
     }
-    let currentPreviewIndex = this.state.hoverIndex
-      ? this.state.hoverIndex
-      : this.props.selectedIndex;
+    let currentPreviewIndex = this.props.selectedIndex;
+    if (this.state.hoverIndex !== null) {
+      currentPreviewIndex = this.state.hoverIndex;
+    }
     return (
       <div id={styles.imagePreview}>
         <div id={styles.previewContainer1} ref={this.state.mainCarouselRef}>

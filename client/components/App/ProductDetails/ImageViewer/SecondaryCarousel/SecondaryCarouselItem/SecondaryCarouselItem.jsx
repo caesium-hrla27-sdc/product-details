@@ -11,8 +11,8 @@ class SecondaryCarouselItem extends React.Component {
       <div
         className={styles.carouselItemContainer1}
         style={{ width: `${100 / this.props.pageSize}%` }}
-        onMouseEnter={this.props.onMouseEnter.bind(null, this.props.index)}
-        onMouseLeave={this.props.onMouseLeave.bind(null, this.props.index)}
+        onMouseEnter={event => this.props.onMouseEnter(this.props.index, event)}
+        onMouseLeave={event => this.props.onMouseLeave(this.props.index, event)}
         onClick={event => this.props.onClick(this.props.index, event)}
       >
         <div
