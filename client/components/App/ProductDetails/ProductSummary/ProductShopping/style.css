@@ -74,6 +74,12 @@
   z-index: 1000;
 }
 
+#checkboxLabelContainer1 {
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
 #checkboxLabelButton {
   background-color: transparent;
   width: 100%;
@@ -294,4 +300,12 @@
   border-color: #ccc;
   box-shadow: none;
   padding-right: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+ins {
+  text-decoration: underline;
 }

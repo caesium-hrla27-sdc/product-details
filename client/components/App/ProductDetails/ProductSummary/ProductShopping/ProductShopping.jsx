@@ -47,14 +47,14 @@ class ProductShopping extends React.Component {
               </svg>
             </div>
 
-            <div>
+            <div id={styles.checkboxLabelContainer1}>
               <div>
                 <div>
                   <div>
                     <button id={styles.checkboxLabelButton} type="button">
                       <p>
-                        Yes, I want <strong>FREE 2-Day Shipping</strong>
-                        with Sephora FLASH. <ins>Learn More</ins>
+                        Yes, I want <strong>FREE 2-Day Shipping</strong> with
+                        Sephora FLASH. <ins>Learn More</ins>
                       </p>
                     </button>
                   </div>
