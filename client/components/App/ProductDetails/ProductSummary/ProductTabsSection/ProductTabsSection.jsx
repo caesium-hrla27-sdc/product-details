@@ -3,18 +3,19 @@ import React from 'react';
 import styles from './style.css';
 
 import TabHeadings from './TabHeadings/TabHeadings';
+import TabMain from './TabMain/TabMain';
 
 class ProductTabsSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTab: 0
+      currentTab: 'details'
     };
     this.changeTab = this.changeTab.bind(this);
   }
 
-  changeTab(index) {
-    this.setState({ currentTab: index });
+  changeTab(newTab) {
+    this.setState({ currentTab: newTab });
   }
   render() {
     return (
@@ -23,7 +24,10 @@ class ProductTabsSection extends React.Component {
           currentTab={this.state.currentTab}
           changeTab={this.changeTab}
         />
-        {/* <TabMain /> */}
+        <TabMain
+          product={this.props.product}
+          currentTab={this.state.currentTab}
+        />
       </div>
     );
   }

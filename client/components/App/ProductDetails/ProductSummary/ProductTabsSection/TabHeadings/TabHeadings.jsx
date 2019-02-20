@@ -10,13 +10,11 @@ class TabHeadings extends React.Component {
     return (
       <div id={styles.headingsContainer}>
         <button
-          id="tab0"
-          // tabIndex={0}
-          onClick={() => this.props.changeTab(0)}
+          onClick={() => this.props.changeTab('details')}
           className={styles.tabButton}
           type="button"
           style={
-            this.props.currentTab === 0
+            this.props.currentTab === 'details'
               ? {
                   cursor: 'default',
                   fontWeight: '700',
@@ -28,19 +26,19 @@ class TabHeadings extends React.Component {
         >
           <span
             className={styles.tabSpan}
-            style={this.props.currentTab === 0 ? { borderColor: '#000' } : {}}
+            style={
+              this.props.currentTab === 'details' ? { borderColor: '#000' } : {}
+            }
           >
             Details
           </span>
         </button>
         <button
-          id="tab1"
-          onClick={() => this.props.changeTab(1)}
-          // tabIndex={1}
+          onClick={() => this.props.changeTab('how_to_use')}
           className={styles.tabButton}
           type="button"
           style={
-            this.props.currentTab === 1
+            this.props.currentTab === 'how_to_use'
               ? {
                   cursor: 'default',
                   fontWeight: '700',
@@ -52,19 +50,21 @@ class TabHeadings extends React.Component {
         >
           <span
             className={styles.tabSpan}
-            style={this.props.currentTab === 1 ? { borderColor: '#000' } : {}}
+            style={
+              this.props.currentTab === 'how_to_use'
+                ? { borderColor: '#000' }
+                : {}
+            }
           >
             How to Use
           </span>
         </button>
         <button
-          id="tab2"
-          // tabIndex={2}
-          onClick={() => this.props.changeTab(2)}
+          onClick={() => this.props.changeTab('ingredients')}
           className={styles.tabButton}
           type="button"
           style={
-            this.props.currentTab === 2
+            this.props.currentTab === 'ingredients'
               ? {
                   cursor: 'default',
                   fontWeight: '700',
@@ -76,19 +76,21 @@ class TabHeadings extends React.Component {
         >
           <span
             className={styles.tabSpan}
-            style={this.props.currentTab === 2 ? { borderColor: '#000' } : {}}
+            style={
+              this.props.currentTab === 'ingredients'
+                ? { borderColor: '#000' }
+                : {}
+            }
           >
             Ingredients
           </span>
         </button>
         <button
-          id="tab3"
-          // tabIndex={3}
-          onClick={() => this.props.changeTab(3)}
+          onClick={() => this.props.changeTab('about_the_brand')}
           className={styles.tabButton}
           type="button"
           style={
-            this.props.currentTab === 3
+            this.props.currentTab === 'about_the_brand'
               ? {
                   cursor: 'default',
                   fontWeight: '700',
@@ -100,19 +102,21 @@ class TabHeadings extends React.Component {
         >
           <span
             className={styles.tabSpan}
-            style={this.props.currentTab === 3 ? { borderColor: '#000' } : {}}
+            style={
+              this.props.currentTab === 'about_the_brand'
+                ? { borderColor: '#000' }
+                : {}
+            }
           >
             About the Brand
           </span>
         </button>
         <button
-          id="tab4"
-          // tabIndex={4}
-          onClick={() => this.props.changeTab(4)}
+          onClick={() => this.props.changeTab('shipping_returns')}
           className={styles.tabButton}
           type="button"
           style={
-            this.props.currentTab === 4
+            this.props.currentTab === 'shipping_returns'
               ? {
                   cursor: 'default',
                   fontWeight: '700',
@@ -124,7 +128,11 @@ class TabHeadings extends React.Component {
         >
           <span
             className={styles.tabSpan}
-            style={this.props.currentTab === 4 ? { borderColor: '#000' } : {}}
+            style={
+              this.props.currentTab === 'shipping_returns'
+                ? { borderColor: '#000' }
+                : {}
+            }
           >
             Shipping &amp; Returns
           </span>
