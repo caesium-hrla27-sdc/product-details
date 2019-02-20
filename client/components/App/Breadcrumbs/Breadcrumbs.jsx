@@ -10,16 +10,18 @@ class Breadcrumbs extends React.Component {
   render() {
     const breadcrumbs = this.props.breadcrumbs;
     return (
-      <ul id={styles.breadcrumbs}>
-        {breadcrumbs.map((crumb, index) => (
-          <li key={index} className={styles.crumb}>
-            <a>{crumb}</a>
-            {index === breadcrumbs.length - 1 ? null : (
-              <img className={styles.arrow} src={arrow} />
-            )}
-          </li>
-        ))}
-      </ul>
+      <nav>
+        <ol id={styles.breadcrumbs}>
+          {breadcrumbs.map((crumb, index) => (
+            <li key={index} className={styles.crumb}>
+              <a>{crumb}</a>
+              {index === breadcrumbs.length - 1 ? null : (
+                <img className={styles.arrow} src={arrow} />
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
     );
   }
 }
