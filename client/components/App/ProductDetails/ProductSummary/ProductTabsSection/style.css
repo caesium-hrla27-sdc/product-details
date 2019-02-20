@@ -1,0 +1,37 @@
+.carouselItemContainer1 {
+  flex-shrink: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
+}
+
+.carouselItemContainer2 {
+  display: block;
+  position: relative;
+  border-radius: 7px;
+  padding: 1px;
+  border-width: 3px;
+  border-style: solid;
+}
+.carouselItemContainer3 {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.carouselItemContainer4 {
+  display: block;
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100%;
+}
+
+.carouselItem {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+}

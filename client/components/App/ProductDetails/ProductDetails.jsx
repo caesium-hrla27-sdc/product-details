@@ -12,7 +12,7 @@ class ProductDetails extends React.Component {
     return (
       <div id={styles.productDetails}>
         <ImageViewer product={this.props.product} />
-        <ProductSummary />
+        <ProductSummary product={this.props.product} />
       </div>
     );
   }
