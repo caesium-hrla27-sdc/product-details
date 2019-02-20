@@ -19,7 +19,7 @@ class ProductSummary extends React.Component {
           <ProductPrice product={this.props.product} />
           <ProductShopping product={this.props.product} />
         </div>
-        {/* <ProductTabsSection product={this.props.product} /> */}
+        <ProductTabsSection product={this.props.product} />
       </div>
     );
   }
