@@ -133,10 +133,9 @@ class ProductShopping extends React.Component {
                     <div id={styles.storeInputContainer2}>
                       <input
                         type="text"
-                        autocomplete="postal-code"
-                        autocorrect="off"
-                        maxlength="10"
-                        value=""
+                        autoComplete="postal-code"
+                        autoCorrect="off"
+                        maxLength="10"
                         placeholder="Enter ZIP/Postal code"
                         name="zipCode"
                         id={styles.storeInput}
