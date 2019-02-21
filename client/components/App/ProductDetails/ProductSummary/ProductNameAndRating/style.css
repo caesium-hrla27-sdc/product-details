@@ -1,0 +1,136 @@
+#container {
+  flex-basis: 0%;
+  flex: 1;
+  padding-left: 6px;
+  padding-right: 6px;
+  min-width: 0;
+  display: block;
+  width: 250px;
+}
+
+#nameAndDescription {
+  word-wrap: break-word;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+#name {
+  word-wrap: break-word;
+}
+
+#nameBox {
+  outline: 0;
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#description {
+  display: block;
+  word-wrap: break-word;
+  font-weight: initial;
+}
+
+#sizeAndNumberBox {
+  display: block;
+  color: #757575;
+  margin-bottom: 12px;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+#sizeNumberSeparator {
+  word-wrap: break-word;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+#ratingsAndLovesBox {
+  display: block;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+}
+
+#ratingsBox {
+  display: inline-block;
+}
+
+#ratingsButton {
+  display: block;
+}
+
+#starsSpan {
+  position: relative;
+  display: inline-block;
+  top: 0.0625em;
+}
+#starsContainer {
+  color: #ccc;
+  width: 5em;
+  height: 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+  text-align: left;
+}
+
+.star {
+  display: inline-block;
+  height: 1em;
+  fill: currentColor;
+  position: relative;
+  vertical-align: text-bottom;
+  width: 1em;
+}
+
+#starFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #000;
+}
+
+#reviewCount {
+  word-wrap: break-word;
+  margin-left: 0.5em;
+}
+
+#reviewLovesSeparator {
+  display: inline-block;
+  height: 1.125em;
+  vertical-align: text-bottom;
+  border-color: #ccc;
+  margin-left: 0.75em;
+  margin-right: 0.75em;
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+
+#lovesSpan {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+}
+
+#loveHeartSpan {
+  word-wrap: break-word;
+  font-size: 1.125em;
+}
+
+#loveHeartSvg {
+  display: inline-block;
+  height: 1em;
+  fill: currentColor;
+  position: relative;
+  vertical-align: text-bottom;
+  width: 1.25em;
+}
+
+#loveCount {
+  word-wrap: break-word;
+  margin-left: 0.5em;
+}

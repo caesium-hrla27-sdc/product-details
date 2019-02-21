@@ -5,3 +5,25 @@
   letter-spacing: 0;
   flex: none;
 }
+
+#masthead{
+  position: relative;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.125);
+  z-index: 1000;
+}
+
+#header{
+  position: relative;
+
+}
+
+#main{
+  flex-direction: column;
+  padding-left: 22px;
+  padding-right: 22px;
+  box-sizing: content-box;
+  width: 980px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}

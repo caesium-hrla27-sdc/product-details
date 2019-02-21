@@ -1,9 +1,8 @@
 #breadcrumbs {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  height: 50px;
   align-items: center;
-  padding: 0px;
+  font-size: 12px;
 }
 
 .crumb {
