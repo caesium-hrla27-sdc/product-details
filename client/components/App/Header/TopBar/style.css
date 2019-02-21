@@ -1,0 +1,30 @@
+#container1 {
+  position: relative;
+}
+#container2 {
+  display: block;
+  background-color: #000;
+  position: relative;
+  color: #fff;
+  font-size: 12px;
+}
+
+#container3 {
+  flex-direction: column;
+  padding-left: 22px;
+  padding-right: 22px;
+  box-sizing: content-box;
+  position: relative;
+  width: 980px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#container4 {
+  display: flex;
+  position: relative;
+  height: 34px;
+  align-items: center;
+  justify-content: space-between;
+}

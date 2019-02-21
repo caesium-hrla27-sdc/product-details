@@ -1,0 +1,7 @@
+#nav{
+  display: flex;
+    height: 40px;
+    position: relative;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}

@@ -1,0 +1,38 @@
+#container1{
+  display: block;
+    line-height: 1.25;
+}
+
+#container2{
+  position: relative;
+    display: block;
+}
+
+#container3{
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  cursor: default;
+  padding-left: 24px;
+  padding-right: 24px;
+  letter-spacing: .0625em;
+}
+
+#container4{
+  display: flex;
+  height: 40px;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#container5{
+  display: block;
+  position: relative;
+  border-color: transparent;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}

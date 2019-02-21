@@ -2,8 +2,9 @@ import React from 'react';
 
 import styles from './style.css';
 
-import TopMain from './TopMain/TopMain';
-import BottomMain from './BottomMain/BottomMain';
+import Main from './Main/Main';
+import HeaderTabs from './HeaderTabs/HeaderTabs';
+import TopBar from './TopBar/TopBar';
 
 class Header extends React.Component {
   constructor(props) {
@@ -14,10 +15,10 @@ class Header extends React.Component {
       <div id={styles.headerContainer}>
         <header id={styles.header}>
           <div id={styles.masthead}>
-            <div id={styles.topbar} />
+            <TopBar />
             <div id={styles.main}>
-              <TopMain />
-              <BottomMain />
+              <Main />
+              <HeaderTabs />
             </div>
           </div>
         </header>
