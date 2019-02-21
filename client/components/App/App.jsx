@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
-import ProductDetailsMain from './ProductDetailsMain/ProductDetailsMain';
+import ProductDetails from './ProductDetails/ProductDetails';
 import Header from './Header/Header';
 
 import styles from './style.css';
@@ -30,7 +30,7 @@ class App extends React.Component {
                 <div id={styles.productDetailsContainer1}>
                   <div id={styles.productDetailsContainer2}>
                     <Breadcrumbs breadcrumbs={this.state.product.breadcrumbs} />
-                    <ProductDetailsMain product={this.state.product} />
+                    <ProductDetails product={this.state.product} />
                   </div>
                 </div>
               </div>
