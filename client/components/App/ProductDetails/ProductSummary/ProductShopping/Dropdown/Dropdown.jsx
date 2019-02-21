@@ -44,6 +44,7 @@ class Dropdown extends React.Component {
                 10
               </option>
             </select>
+            <span id={styles.arrowBox} />
           </div>
         </div>
       </div>

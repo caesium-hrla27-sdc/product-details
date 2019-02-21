@@ -38,6 +38,7 @@
   font-family: inherit;
   font-size: 14px;
   width: 100%;
+  -webkit-appearance: none;
   vertical-align: middle;
   height: 40px;
   padding-left: 12px;
@@ -52,4 +53,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 54px;
+}
+
+#arrowBox {
+  border-left: 0.375em solid transparent;
+  border-right: 0.375em solid transparent;
+  border-top: 0.4375em solid;
+  border-bottom: 0;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translate(0, -50%);
+  font-size: 12px;
+  pointer-events: none;
 }
