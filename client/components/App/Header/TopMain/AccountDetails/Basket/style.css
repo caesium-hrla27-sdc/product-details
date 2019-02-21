@@ -1,0 +1,29 @@
+#container2 {
+  display: block;
+  margin-right: -8px;
+}
+
+#container3 {
+  position: relative;
+  display: block;
+}
+
+#container4 {
+  display: block;
+  padding: 8px;
+}
+
+#container5 {
+  display: block;
+  position: relative;
+  line-height: 0;
+}
+#svgBasket {
+  display: inline-block;
+  height: 1em;
+  fill: currentcolor;
+  position: relative;
+  vertical-align: text-bottom;
+  width: 1.125em;
+  font-size: 27px;
+}
