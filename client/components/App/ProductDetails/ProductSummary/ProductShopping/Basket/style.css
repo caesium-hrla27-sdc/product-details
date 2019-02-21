@@ -1,0 +1,55 @@
+#basketContainer {
+  display: flex;
+  margin-left: -8px;
+  margin-right: -8px;
+  flex-flow: row wrap;
+}
+
+#aboveBasket {
+  flex-basis: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: block;
+  min-width: 0px;
+  width: 100%;
+}
+
+#basketContainer2 {
+  flex-basis: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: block;
+  min-width: 0px;
+  width: 100%;
+}
+
+#basketButton {
+  font-size: 12px;
+  line-height: 1.5;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  background-color: rgb(236, 4, 15);
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  display: block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  text-decoration: none;
+  outline: 0px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease 0s;
+}
+
+#basketButton:hover {
+  background-color: rgb(208, 17, 43);
+}
