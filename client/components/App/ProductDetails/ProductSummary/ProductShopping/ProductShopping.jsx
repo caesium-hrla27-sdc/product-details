@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './style.css';
 
 import FlashBox from './FlashBox/FlashBox';
+import Dropdown from './Dropdown/Dropdown';
 
 class ProductShopping extends React.Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class ProductShopping extends React.Component {
     return (
       <div id={styles.container}>
         <FlashBox />
-
         <div id={styles.shoppingBottom}>
           <Dropdown />
           <div id={styles.bottomRightContainer}>
