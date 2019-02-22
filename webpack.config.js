@@ -4,9 +4,8 @@ module.exports = {
   entry: path.resolve(__dirname, './client/'),
   devtool: 'inline-source-map',
   output: {
-    path: path.resolve(__dirname, './public/build'),
-    filename: 'bundle.js',
-    publicPath: './build/'
+    path: path.resolve(__dirname, './public'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [

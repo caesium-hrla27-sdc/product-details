@@ -21,8 +21,9 @@ coverage
 .grunt
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
-public/build/
-dist/
+public/
+!public/index.html
+!public/style.css
 
 # Planning
 component-breakdown.png
