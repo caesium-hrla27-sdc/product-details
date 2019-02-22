@@ -10,16 +10,20 @@ import styles from './style.css';
 class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { product: {} };
+    this.state = {};
+  }
 
-    axios.get('/details').then(({ data }) => {
+  componentDidMount() {
+    axios.get('/productDetails').then(({ data }) => {
       this.setState({
         product: data
       });
     });
   }
+
   render() {
-    if (Object.keys(this.state.product).length !== 0) {
+    if (this.state.product !== undefined) {
+      console.log(this.state.product);
       return (
         <div id={styles.app}>
           <Header />

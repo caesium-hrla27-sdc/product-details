@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/sephora');
+mongoose
+  .connect('mongodb://localhost/sephora')
+  .then(() => console.log('connection to mongo successful'))
+  .catch(() => console.log('failed to connect to mongo'));
 
 const productSchema = new mongoose.Schema({
   name: String,
@@ -23,4 +26,9 @@ const productSchema = new mongoose.Schema({
 
 const Product = mongoose.model('product', productSchema);
 
+Product.find().then(data => {
+  if (data.length === 0) {
+    require('./dataGenerator');
+  }
+});
 module.exports = { Product, mongoose };

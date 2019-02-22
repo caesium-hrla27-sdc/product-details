@@ -1,5 +1,5 @@
 const faker = require('faker');
-const { Product, mongoose } = require('./server/databases/index');
+const { Product, mongoose } = require('./index');
 let imageCounter = 0;
 faker.seed(42);
 
@@ -56,4 +56,4 @@ for (let i = 0; i < 1000; i++) {
   newProductDoc.save();
 }
 
-console.log('complete');
+console.log('data generation complete');
