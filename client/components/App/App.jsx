@@ -11,9 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { product: {} };
-    let id = 2;
-    axios.get('/product/' + id).then(({ data }) => {
-      console.log(data);
+
+    axios.get('/product/' + this.props.id).then(({ data }) => {
       this.setState({
         product: data
       });
