@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 
-let id = 2;
-ReactDOM.render(<App id={id} />, document.getElementById('app-container'));
+ReactDOM.render(<ProductDetails />, document.getElementById('productDetails'));

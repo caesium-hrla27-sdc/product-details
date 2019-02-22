@@ -2,17 +2,17 @@ import React from 'react';
 import axios from 'axios';
 
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
-import ProductDetails from './ProductDetails/ProductDetails';
+import Main from './Main/Main';
 import Header from './Header/Header';
 
 import styles from './style.css';
 
-class App extends React.Component {
+class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = { product: {} };
 
-    axios.get('/product/' + this.props.id).then(({ data }) => {
+    axios.get('/details').then(({ data }) => {
       this.setState({
         product: data
       });
@@ -29,7 +29,7 @@ class App extends React.Component {
                 <div id={styles.productDetailsContainer1}>
                   <div id={styles.productDetailsContainer2}>
                     <Breadcrumbs breadcrumbs={this.state.product.breadcrumbs} />
-                    <ProductDetails product={this.state.product} />
+                    <Main product={this.state.product} />
                   </div>
                 </div>
               </div>
@@ -43,4 +43,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default ProductDetails;
