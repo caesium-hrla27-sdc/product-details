@@ -1,8 +1,9 @@
 import React from 'react';
 
-import styles from './style.css';
 import MarketingMessage from './MarketingMessage/MarketingMessage';
 import TopBarOptions from './TopBarOptions/TopBarOptions';
+
+import styles from './style.css';
 
 class TopBar extends React.Component {
   constructor(props) {

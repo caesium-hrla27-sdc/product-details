@@ -1,11 +1,11 @@
 import React from 'react';
 
-import styles from './style.css';
-
 import FlashBox from './FlashBox/FlashBox';
 import Dropdown from './Dropdown/Dropdown';
 import Basket from './Basket/Basket';
 import Loves from './Loves/Loves';
+
+import styles from './style.css';
 
 class ProductShopping extends React.Component {
   constructor(props) {

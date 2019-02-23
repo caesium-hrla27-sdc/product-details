@@ -61,4 +61,7 @@
   padding-top: 4px;
   padding-bottom: 4px;
   outline: 0px;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './style.css';
-
 import TabHeadings from './TabHeadings/TabHeadings';
 import TabMain from './TabMain/TabMain';
+
+import styles from './style.css';
 
 class ProductTabsSection extends React.Component {
   constructor(props) {

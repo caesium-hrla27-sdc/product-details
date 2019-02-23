@@ -1,7 +1,8 @@
 import React from 'react';
 
-import styles from './style.css';
 import arrow from './arrow.svg';
+
+import styles from './style.css';
 
 class Breadcrumbs extends React.Component {
   constructor(props) {

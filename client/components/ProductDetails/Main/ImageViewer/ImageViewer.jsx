@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './style.css';
-
 import ImagePreview from './ImagePreview/ImagePreview';
 import ImageModal from '../ImageViewer/ImageModal/ImageModal';
+
+import styles from './style.css';
 
 class ImageViewer extends React.Component {
   constructor(props) {

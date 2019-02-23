@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './style.css';
-
 import ModalMainCarousel from './ModalMainCarousel/ModalMainCarousel';
 import SecondaryCarousel from '../SecondaryCarousel/SecondaryCarousel';
+
+import styles from './style.css';
 
 class ImageModal extends React.Component {
   constructor(props) {

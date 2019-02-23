@@ -1,10 +1,10 @@
 import React from 'react';
 
-import styles from './style.css';
-
 import Main from './Main/Main';
 import HeaderTabs from './HeaderTabs/HeaderTabs';
 import TopBar from './TopBar/TopBar';
+
+import styles from './style.css';
 
 class Header extends React.Component {
   constructor(props) {

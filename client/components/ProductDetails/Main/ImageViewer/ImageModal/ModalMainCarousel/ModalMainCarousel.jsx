@@ -1,8 +1,8 @@
 import React from 'react';
 
-import styles from './style.css';
-
 import MainCarousel from '../../MainCarousel/MainCarousel';
+
+import styles from './style.css';
 
 class ModalMainCarousel extends React.Component {
   constructor(props) {

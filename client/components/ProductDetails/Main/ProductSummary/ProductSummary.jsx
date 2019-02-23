@@ -1,11 +1,11 @@
 import React from 'react';
 
-import styles from './style.css';
-
 import ProductNameAndRating from './ProductNameAndRating/ProductNameAndRating';
 import ProductPrice from './ProductPrice/ProductPrice';
 import ProductShopping from './ProductShopping/ProductShopping';
 import ProductTabsSection from './ProductTabsSection/ProductTabsSection';
+
+import styles from './style.css';
 
 class ProductSummary extends React.Component {
   constructor(props) {

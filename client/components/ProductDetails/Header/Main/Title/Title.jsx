@@ -1,7 +1,8 @@
 import React from 'react';
 
-import styles from './style.css';
 import logo from './logo.svg';
+
+import styles from './style.css';
 
 class Title extends React.Component {
   constructor(props) {

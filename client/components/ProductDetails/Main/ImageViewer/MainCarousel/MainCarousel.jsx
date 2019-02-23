@@ -1,8 +1,9 @@
 import React from 'react';
 
+import MainCarouselItem from './MainCarouselItem/MainCarouselItem';
+
 import styles from './style.css';
 
-import MainCarouselItem from './MainCarouselItem/MainCarouselItem';
 class MainCarousel extends React.Component {
   constructor(props) {
     super(props);

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import styles from './style.css';
-
 import SearchBar from './SearchBar/SearchBar';
 import AccountDetails from './AccountDetails/AccountDetails';
 import Title from './Title/Title';
+
+import styles from './style.css';
 
 class TopMain extends React.Component {
   constructor(props) {

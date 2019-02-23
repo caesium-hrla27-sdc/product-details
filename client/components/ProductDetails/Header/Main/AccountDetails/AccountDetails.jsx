@@ -1,10 +1,10 @@
 import React from 'react';
 
-import styles from './style.css';
-
 import SignIn from './SignIn/SignIn';
 import LovesList from './LovesList/LovesList';
 import Basket from './Basket/Basket';
+
+import styles from './style.css';
 
 class AccountDetails extends React.Component {
   constructor(props) {
