@@ -44,8 +44,8 @@
   display: block;
 }
 
-[class*='css-'],
-[id*='css-'] {
+[class^='css-'],
+[id^='css-'] {
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;

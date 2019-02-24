@@ -1,7 +1,5 @@
 import React from 'react';
 
-import arrow from './arrow.svg';
-
 import styles from './style.css';
 
 class Breadcrumbs extends React.Component {
@@ -17,7 +15,9 @@ class Breadcrumbs extends React.Component {
             <li key={index} className={styles.crumb}>
               <a>{crumb}</a>
               {index === breadcrumbs.length - 1 ? null : (
-                <img className={styles.arrow} src={arrow} />
+                <svg className={styles.arrow} viewBox="0 95 57 95">
+                  <path d="M57 142.5L9.5 95 0 104.5l38 38-38 38 9.5 9.5L57 142.5z" />
+                </svg>
               )}
             </li>
           ))}

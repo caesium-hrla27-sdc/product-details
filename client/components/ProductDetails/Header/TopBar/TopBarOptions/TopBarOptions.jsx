@@ -1,6 +1,7 @@
 import React from 'react';
 
-import usFlag from './usFlag.svg';
+const usFlag =
+  'https://s3.us-east-2.amazonaws.com/ho-fec-product-details/usFlag.svg';
 
 import styles from './style.css';
 

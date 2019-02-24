@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 
+import styles from './style.css';
+
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import Main from './Main/Main';
 import Header from './Header/Header';
-
-import styles from './style.css';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -23,7 +23,6 @@ class ProductDetails extends React.Component {
 
   render() {
     if (this.state.product !== undefined) {
-      console.log(this.state.product);
       return (
         <div id={styles.app}>
           <Header />

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import logo from './logo.svg';
+const logo =
+  'https://s3.us-east-2.amazonaws.com/ho-fec-product-details/logo.svg';
 
 import styles from './style.css';
 
