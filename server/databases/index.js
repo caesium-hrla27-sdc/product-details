@@ -1,8 +1,17 @@
 const mongoose = require('mongoose');
-mongoose
-  .connect('mongodb://localhost/sephora')
-  .then(() => console.log('connection to mongo successful'))
-  .catch(() => console.log('failed to connect to mongo'));
+
+const connectToMongo = () => {
+  mongoose
+    .connect('mongodb://mongo/sephora')
+    .then(() => console.log('connection to mongo successful'))
+    .catch(() => {
+      console.log('connection to mongo unsuccessful');
+      setTimeout(connectToMongo, 1000);
+      // process.exit();
+    });
+};
+
+connectToMongo();
 
 const productSchema = new mongoose.Schema({
   name: String,

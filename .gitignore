@@ -24,6 +24,7 @@ coverage
 public/
 !public/index.html
 !public/style.css
+data/
 
 # Planning
 component-breakdown.png
