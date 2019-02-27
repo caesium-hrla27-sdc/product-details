@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectToMongo = () => {
   mongoose
-    .connect('mongodb://mongo/sephora')
+    .connect('mongodb://localhost/sephora',{useNewUrlParser: true })
     .then(() => console.log('connection to mongo successful'))
     .catch(() => {
       console.log('connection to mongo unsuccessful');

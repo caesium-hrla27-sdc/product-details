@@ -14,8 +14,16 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
-
 app.use(express.static(path.resolve(__dirname, '../public')));
+
+app.get('/productDetails/', (req, res) => {
+
+	var tempid = Math.floor(Math.random()*1000);
+  Product.findOne({ id: tempid }).then(product => {
+    res.status(200).json(product);
+  });
+});
+
 
 app.get('/productDetails/:id', (req, res) => {
   Product.findOne({ id: req.params.id }).then(product => {

@@ -23,7 +23,6 @@ coverage
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 public/
 !public/index.html
-!public/style.css
 data/
 
 # Planning
