@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 
+
 const connectToMongo = () => {
   mongoose
-    .connect('mongodb://localhost/sephora',{useNewUrlParser: true })
+    .connect('mongodb://localhost/sephora',{ useNewUrlParser: true })
     .then(() => console.log('connection to mongo successful'))
     .catch(() => {
       console.log('connection to mongo unsuccessful');
       setTimeout(connectToMongo, 1000);
-      // process.exit();
+      process.exit();
     });
 };
 
@@ -35,9 +36,10 @@ const productSchema = new mongoose.Schema({
 
 const Product = mongoose.model('product', productSchema);
 
-Product.find().then(data => {
-  if (data.length === 0) {
-    require('./dataGenerator');
-  }
-});
+// Product.find().then(data => {
+//   if (data.length === 0) {
+//     require('./dataGenerator');
+//   }
+// });
+
 module.exports = { Product, mongoose };

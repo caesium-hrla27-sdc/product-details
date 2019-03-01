@@ -25,6 +25,8 @@ public/
 !public/index.html
 data/
 
+server/databases/*.json
+
 # Planning
 component-breakdown.png
 
