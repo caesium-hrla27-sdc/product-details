@@ -18,7 +18,7 @@ const productSchema = new mongoose.Schema({
   name: String,
   id: Number,
   description: String,
-  breadcrumbs: [String],
+  breadcrumbs: String,
   size: String,
   item_number: String,
   price: String,
@@ -31,15 +31,9 @@ const productSchema = new mongoose.Schema({
   average_rating: Number,
   review_count: Number,
   loves_count: Number,
-  media: [Object]
+  media: String,
 });
 
 const Product = mongoose.model('product', productSchema);
-
-// Product.find().then(data => {
-//   if (data.length === 0) {
-//     require('./dataGenerator');
-//   }
-// });
 
 module.exports = { Product, mongoose };
