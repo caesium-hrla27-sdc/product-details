@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+const connection = require('mongoose');
 
 
 const connectToMongo = () => {
-  mongoose
+  connection
     .connect('mongodb://localhost/sephora',{ useNewUrlParser: true })
     .then(() => console.log('connection to mongo successful'))
     .catch(() => {
@@ -14,7 +14,7 @@ const connectToMongo = () => {
 
 connectToMongo();
 
-const productSchema = new mongoose.Schema({
+const productSchema = new connection.Schema({
   name: String,
   id: Number,
   description: String,
@@ -34,6 +34,6 @@ const productSchema = new mongoose.Schema({
   media: String,
 });
 
-const Product = mongoose.model('product', productSchema);
+const Product = connection.model('product', productSchema);
 
-module.exports = { Product, mongoose };
+module.exports = { Product, connection };

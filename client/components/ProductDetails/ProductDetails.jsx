@@ -15,12 +15,15 @@ class ProductDetails extends React.Component {
 
   componentDidMount() {
     axios.get('/productDetails').then(({ data }) => {
-
+			
 			data.breadcrumbs = data.breadcrumbs.split(" ")
 			data.media = data.media.split(" ")
 			for (let i =0; i < data.media.length; i++){
 				data.media[i] = { type:"image", url: "https://picsum.photos/1920?image=" + data.media[i]}
 			}
+			data.average_rating = data.average_rating/1000
+			data.price = Math.floor(data.price/100)/100
+			console.log(data)
 
 
       this.setState({
