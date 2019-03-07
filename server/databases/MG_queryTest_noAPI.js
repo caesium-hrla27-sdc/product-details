@@ -1,5 +1,4 @@
 const connection = require('mongoose');
-
 const connectToMongo = () => {
   connection
     .connect('mongodb://localhost/sephora',{ useNewUrlParser: true })
@@ -10,9 +9,6 @@ const connectToMongo = () => {
       process.exit();
     });
 };
-
-connectToMongo();
-
 const productSchema = new connection.Schema({
   name: String,
   id: Number,
@@ -32,7 +28,25 @@ const productSchema = new connection.Schema({
   loves_count: Number,
   media: String,
 });
-
 const Product = connection.model('product', productSchema);
 
-module.exports = { Product, connection };
+
+async function testMongo(amount) {
+
+	await connectToMongo();
+	console.time("Mongo Trial " + amount)
+	for (let i = 0; i < amount; i++) {
+		var randNumb = Math.floor(Math.random() * 1e7)
+		Product.findOne({
+			id: randNumb
+		}).then(product => {
+			if (i===amount-1){
+				console.timeEnd("Mongo Trial " + amount)
+			}
+		});
+	}
+}
+
+testMongo(5000);
+
+var t0 = performance.now();
