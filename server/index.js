@@ -1,15 +1,16 @@
+const nr = require('newrelic');
+
 const express = require('express');
 const cors = require('cors');
-const morgan = require('morgan');
 const parser = require('body-parser');
 const path = require('path');
 
-// const {	Product } = require('./databases/index_mongo');
 const pool = require('./databases/index_postgres');
 const PORT = process.env.PORT || 3002;
 const app = express();
 
 app.use(cors());
+const morgan = require('morgan');
 app.use(morgan('dev'));
 app.use(parser.json());
 app.use(parser.urlencoded({	extended: true}));
@@ -18,30 +19,27 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 var maxRange = 9999999;
 
 app.get('/productDetails/', (req, res) => {
-
 		var tempID = Math.floor(Math.random() * maxRange );
 		pool.query('SELECT * FROM products WHERE id =' + tempID, (err, result) => {
-			res.status(200).json(result.rows[0]);
+			if (err) {
+				res.status(404).send();
+			} else {
+				res.status(200).json(result.rows[0]);
+			}
 		})
-
 });
 
 app.get('/productDetails/:id', (req, res) => {
-
 		pool.query('SELECT * FROM products WHERE id =' + req.params.id, (err, result) => {
 			if (err) { res.status(404).send('db err', err);}
 			res.status(200).json(result.rows[0]);
 		})
-
 });
 
 //CRUD EXTENSION
-
 app.post('/productDetails/:id', (req, res) => {
-
 		var numb = +1e7*2+req.params.id;
 		var qstring = "INSERT INTO products (id) VALUES ("+numb+")";
-
 		pool.query(qstring, (err, result) => {
 			if (err) { 
 				console.log("ERROR", err)
@@ -52,8 +50,6 @@ app.post('/productDetails/:id', (req, res) => {
 		})
 		
 });
-
-
 
 
 
@@ -75,7 +71,6 @@ app.put('/productDetails/:id', (req, res) => {
 		}
 	})
 
-
 });
 
 app.patch('/productDetails/:id', (req, res) => {
@@ -95,7 +90,6 @@ app.patch('/productDetails/:id', (req, res) => {
 			}
 		}
 	})
-
 
 });
 
