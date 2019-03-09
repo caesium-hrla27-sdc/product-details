@@ -36,7 +36,11 @@ app.get('/productDetails/:id', (req, res) => {
 				console.log(err);
 				res.status(404).send('db err');
 			} else {
-				res.status(200).json(result.rows[0]);
+				if (result.rows){
+					res.status(200).json(result.rows[0]);
+				} else {
+					res.status(404).send('no such item');
+				}
 			}
 			
 		})
