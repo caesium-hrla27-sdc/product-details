@@ -9,7 +9,7 @@ CREATE TABLE "public"."products" (
     "size" text,
     "item_number" int2,
     "price" int4,
-    "“details""" text,
+    "details" text,
     "how_to_use" text,
     "ingredients" text,
     "about_the_brand" text,

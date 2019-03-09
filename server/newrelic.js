@@ -1,4 +1,7 @@
 'use strict'
+const {newrelic_app_name ,newrelic_licensekey } = require('./config.js')
+
+
 /**
  * New Relic agent configuration.
  *
@@ -9,11 +12,11 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['sdc_sephora_pd_test1'],
+  app_name: [newrelic_app_name],
   /**
    * Your New Relic license key.
    */
-  license_key: 'a673e7c37f815ad865c33513fe74abc2d4445c6d',
+  license_key: newrelic_licensekey,
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing

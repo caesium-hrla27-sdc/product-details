@@ -27,6 +27,5 @@ public/
 data/
 server/databases/*.json
 
-# Planning
-component-breakdown.png
-
+# Server setup
+config.js 

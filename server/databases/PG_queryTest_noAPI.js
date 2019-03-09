@@ -1,4 +1,5 @@
 const {Pool} = require('pg')
+const {psql_path, psql_user,psql_password} = require(config)
 
 const pool = new Pool({
 	user: '',
@@ -7,39 +8,6 @@ const pool = new Pool({
 	password: '	',
 	port: 5432,
 })
-
-const pool1 = new Pool({
-	user: '',
-	host: 'localhost',
-	database: 'sephora',
-	password: '	',
-	port: 5432,
-})
-
-const pool2 = new Pool({
-	user: '',
-	host: 'localhost',
-	database: 'sephora',
-	password: '	',
-	port: 5432,
-})
-
-const pool3 = new Pool({
-	user: '',
-	host: 'localhost',
-	database: 'sephora',
-	password: '	',
-	port: 5432,
-})
-
-const pool4 = new Pool({
-	user: '',
-	host: 'localhost',
-	database: 'sephora',
-	password: '	',
-	port: 5432,
-})
-
 
 
 

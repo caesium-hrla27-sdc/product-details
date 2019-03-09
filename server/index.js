@@ -22,6 +22,7 @@ app.get('/productDetails/', (req, res) => {
 		var tempID = Math.floor(Math.random() * maxRange );
 		pool.query('SELECT * FROM products WHERE id =' + tempID, (err, result) => {
 			if (err) {
+				console.log(err);
 				res.status(404).send();
 			} else {
 				res.status(200).json(result.rows[0]);
@@ -31,8 +32,13 @@ app.get('/productDetails/', (req, res) => {
 
 app.get('/productDetails/:id', (req, res) => {
 		pool.query('SELECT * FROM products WHERE id =' + req.params.id, (err, result) => {
-			if (err) { res.status(404).send('db err', err);}
-			res.status(200).json(result.rows[0]);
+			if (err) { 
+				console.log(err);
+				res.status(404).send('db err');
+			} else {
+				res.status(200).json(result.rows[0]);
+			}
+			
 		})
 });
 

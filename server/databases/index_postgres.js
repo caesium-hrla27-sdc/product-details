@@ -1,10 +1,13 @@
 const {Pool} = require('pg')
+const {psql_path, psql_user,psql_password,psql_database,psql_port} = require('../config.js')
+
+
 
 const pool = new Pool({
-	user: '',
-	host: 'localhost',
-	database: 'sephora',
-	password: '	',
+	user: psql_user,
+	host: psql_path,
+	database: psql_database,
+	password: psql_password,
 	port: 5432,
 })
 
